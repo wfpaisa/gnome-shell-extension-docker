@@ -31,7 +31,7 @@ const DockerMenuItem = Me.imports.src.dockerMenuItem;
  * @param {String} styleClass The style of the icon
  * @return {Object} an St.Icon instance
  */
-const createIcon = (name, styleClass) => new St.Icon({ icon_name: name, style_class: styleClass, icon_size: '14' });
+const createIcon = (name, styleClass) => new St.Icon({ icon_name: name, style_class: styleClass, icon_size: '16' });
 
 /**
  * Get the status of a container from the status message obtained with the docker command
@@ -57,12 +57,12 @@ const DockerSubMenuMenuItem = class DockerMenu_DockerSubMenuMenuItem extends Pop
 
         switch (getStatus(containerStatusMessage)) {
             case "stopped":
-                this.actor.insert_child_at_index(createIcon('process-stop-symbolic', 'status-stopped'), 1);
+                this.actor.insert_child_at_index(createIcon('media-playback-stop-symbolic', 'status-stopped'), 1);
                 this.menu.addMenuItem(new DockerMenuItem.DockerMenuItem(containerName, "start"));
                 this.menu.addMenuItem(new DockerMenuItem.DockerMenuItem(containerName, "rm"));
                 break;
             case "running":
-                this.actor.insert_child_at_index(createIcon('system-run-symbolic', 'status-running'), 1);
+                this.actor.insert_child_at_index(createIcon('media-playback-start-symbolic', 'status-running'), 1);
                 this.menu.addMenuItem(new DockerMenuItem.DockerMenuItem(containerName, "pause"));
                 this.menu.addMenuItem(new DockerMenuItem.DockerMenuItem(containerName, "stop"));
                 break;
