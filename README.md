@@ -1,7 +1,7 @@
 # Gnome Shell extension for Docker
 
 ```bash
-cd cd ~/.local/share/gnome-shell/extensions/
+cd ~/.local/share/gnome-shell/extensions/
 git clone https://github.com/wfpaisa/gnome-shell-extension-docker.git docker_status@gpouilloux
 
 #  Alt + F2
